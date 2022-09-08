@@ -1,10 +1,12 @@
 class MoviesController < ApplicationController
-  require_relative '../.api_key.rb'
+ 
   def index
-    (1..10).each do |page|
-      response = HTTP.get("https://api.themoviedb.org/3/discover/movie?api_key=#{$api_key}&language=en-US&sort_by=release_date.desc&page=#{page}&with_genres=27") 
+    movie_arr = []
+    (1..100).each do |page|
+      movie_resp = HTTP.get("https://api.themoviedb.org/3/discover/movie?api_key=GOESHERE&language=en-US&sort_by=release_date.desc&page=#{page}&with_genres=27") 
+      movie_arr << movie_resp
     end 
-    render json: response
+    render json: movie_arr
   end
 end
 

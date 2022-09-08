@@ -41,3 +41,5 @@ gem 'http'
 
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.3.0'
+
+gem 'active_model_serializers', '~> 0.10.0'
